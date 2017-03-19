@@ -4,7 +4,8 @@ import Styles from './Styles/NavigationContainerStyles'
 import NavigationDrawer from './NavigationDrawer'
 
 // screens identified by the router
-import LaunchScreen from '../Containers/LaunchScreen'
+// import LaunchScreen from '../Containers/LaunchScreen'
+import Selection from '../Containers/Selection'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -16,7 +17,7 @@ class NavigationRouter extends Component {
       <Router>
         <Scene key='drawer' component={NavigationDrawer} open={false}>
           <Scene key='drawerChildrenWrapper' navigationBarStyle={Styles.navBar} titleStyle={Styles.title} leftButtonIconStyle={Styles.leftButton} rightButtonTextStyle={Styles.rightButton}>
-            <Scene initial key='launchScreen' component={LaunchScreen} title='LaunchScreen' hideNavBar />
+            <Scene initial key='selectionScreen' component={Selection} title='Textables' />
           </Scene>
         </Scene>
       </Router>
