@@ -8,6 +8,8 @@ import { connect } from 'react-redux'
 // Styles
 import styles from './Styles/SelectionStyle'
 
+const Textables = require('../Fixtures/textables.json')
+
 class Selection extends React.Component {
 
   state: {
@@ -23,15 +25,17 @@ class Selection extends React.Component {
     * This is an array of objects with the properties you desire
     * Usually this should come from Redux mapStateToProps
     *************************************************************/
-    const dataObjects = [
-      {title: 'First Title', description: 'First Description'},
-      {title: 'Second Title', description: 'Second Description'},
-      {title: 'Third Title', description: 'Third Description'},
-      {title: 'Fourth Title', description: 'Fourth Description'},
-      {title: 'Fifth Title', description: 'Fifth Description'},
-      {title: 'Sixth Title', description: 'Sixth Description'},
-      {title: 'Seventh Title', description: 'Seventh Description'}
-    ]
+    // const dataObjects = [
+    //   {title: 'First Title', description: 'First Description'},
+    //   {title: 'Second Title', description: 'Second Description'},
+    //   {title: 'Third Title', description: 'Third Description'},
+    //   {title: 'Fourth Title', description: 'Fourth Description'},
+    //   {title: 'Fifth Title', description: 'Fifth Description'},
+    //   {title: 'Sixth Title', description: 'Sixth Description'},
+    //   {title: 'Seventh Title', description: 'Seventh Description'}
+    // ]
+
+    const dataObjects = Textables[0].items
 
     /* ***********************************************************
     * STEP 2
@@ -64,9 +68,9 @@ class Selection extends React.Component {
   *************************************************************/
   _renderRow (rowData) {
     return (
-      <TouchableOpacity style={styles.row} onPress={() => Clipboard.setString(rowData.title)}>
-        <Text style={styles.boldLabel}>{rowData.title}</Text>
-        <Text style={styles.label}>{rowData.description}</Text>
+      <TouchableOpacity style={styles.row} onPress={() => Clipboard.setString(rowData.art)}>
+        <Text style={styles.boldLabel}>{rowData.name}</Text>
+        <Text style={styles.label}>{rowData.art}</Text>
       </TouchableOpacity>
     )
   }
@@ -97,9 +101,6 @@ class Selection extends React.Component {
 
   // Render a footer.
   _renderFooter = () => {
-    return (
-      <TextInput style={{backgroundColor: 'orange', flex: 1, margin: 20}} />
-    )
   }
 
   render () {
@@ -113,6 +114,7 @@ class Selection extends React.Component {
           enableEmptySections
           pageSize={15}
         />
+        <TextInput style={{backgroundColor: 'orange', width: 300, height: 30, margin: 20}} />
       </View>
     )
   }
