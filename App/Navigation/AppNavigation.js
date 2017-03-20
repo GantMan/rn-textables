@@ -5,9 +5,18 @@ import SelectionScreen from '../Containers/Selection'
 
 const PrimaryNav = StackNavigator({
   LaunchScreen: { screen: LaunchScreen },
-  SelectionScreen: { screen: SelectionScreen }
+  SelectionScreen: {
+    screen: SelectionScreen,
+    navigationOptions: { title: 'Textables' }
+  }
 }, {
-  // headerMode: 'none'
+  // headerMode: 'none',
+  initialRouteName: 'SelectionScreen',
+  navigationOptions: {
+    header: {
+      style: { backgroundColor: '#cdf5eb' }
+    }
+  }
 })
 
 export default PrimaryNav

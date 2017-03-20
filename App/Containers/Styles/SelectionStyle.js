@@ -5,7 +5,6 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     flex: 1,
-    marginTop: Metrics.navBarHeight,
     backgroundColor: Colors.background
   },
   row: {
@@ -14,7 +13,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     margin: Metrics.baseMargin,
-    backgroundColor: Colors.fire,
+    backgroundColor: Colors.ice,
     borderRadius: Metrics.smallMargin
   },
   boldLabel: {
