@@ -2831,6 +2831,11 @@ ignite-ir-next@^0.0.5:
   dependencies:
     ramda "^0.23.0"
 
+"ignite-ir-next@file:/Users/gantman/Documents/Projects/rn/ignite-ir-next":
+  version "0.0.5"
+  dependencies:
+    ramda "^0.23.0"
+
 ignite-vector-icons@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ignite-vector-icons/-/ignite-vector-icons-0.2.1.tgz#c8056f7ce344e058ae99664aaf5509a0c322cd1b"

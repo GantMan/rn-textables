@@ -8,6 +8,10 @@ import { Images } from './DevTheme'
 
 // Examples Render Engine
 import ExamplesRegistry from '../../App/Services/ExamplesRegistry'
+import SectionExample from '../Examples/Containers/ignite-ir-next/examples/SectionExample.js'
+import GridExample from '../Examples/Containers/ignite-ir-next/examples/GridExample.js'
+import RowExample from '../Examples/Containers/ignite-ir-next/examples/RowExample.js'
+import RoundedButton from '../../App/Components/RoundedButton'
 import '../Examples/Components/animatableExample.js'
 import '../Examples/Components/i18nExample.js'
 import '../Examples/Components/vectorExample.js'
@@ -44,6 +48,18 @@ class PluginExamplesScreen extends React.Component {
 
           <View style={styles.screenButtons} />
 
+          <RoundedButton onPress={() => this.props.navigation.navigate('SectionExample')}>
+            Sections Example
+          </RoundedButton>
+
+          <RoundedButton onPress={() => this.props.navigation.navigate('GridExample')}>
+            Grid Example
+          </RoundedButton>
+
+          <RoundedButton onPress={() => this.props.navigation.navigate('RowExample')}>
+            Row Example
+          </RoundedButton>
+
         </ScrollView>
       </View>
     )
@@ -51,6 +67,9 @@ class PluginExamplesScreen extends React.Component {
 }
 
 export default StackNavigator({
+  RowExample: {screen: RowExample, navigationOptions: {header: {visible: true}}},
+  GridExample: {screen: GridExample, navigationOptions: {header: {visible: true}}},
+  SectionExample: {screen: SectionExample, navigationOptions: {header: {visible: true}}},
   PluginExamplesScreen: {screen: PluginExamplesScreen}
 }, {
   headerMode: 'screen',

@@ -54,7 +54,7 @@
     "ignite-animatable": "^0.3.1",
     "ignite-dev-screens": "^2.0.0-beta.8",
     "ignite-i18n": "^0.1.1",
-    "ignite-ir-next": "^0.0.5",
+    "ignite-ir-next": "file:/Users/gantman/Documents/Projects/rn/ignite-ir-next",
     "ignite-vector-icons": "^0.2.1",
     "mockery": "^2.0.0",
     "nyc": "^10.1.2",
