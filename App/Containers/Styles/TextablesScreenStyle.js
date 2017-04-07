@@ -7,15 +7,6 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background
   },
-  row: {
-    width: Metrics.screenWidth / 2 - Metrics.doubleBaseMargin,
-    height: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: Metrics.baseMargin,
-    backgroundColor: Colors.frost,
-    borderRadius: Metrics.smallMargin
-  },
   sectionHeader: {
     paddingTop: Metrics.doubleBaseMargin,
     width: Metrics.screenWidth,

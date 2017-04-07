@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, ListView, Text, TouchableOpacity, Clipboard, TextInput } from 'react-native'
+import FacesCell from '../Components/FacesCell'
 import { connect } from 'react-redux'
 
 // For empty lists
@@ -50,10 +51,12 @@ class ListviewSectionsExample extends React.Component {
     // You can condition on sectionID (key as string), for different cells
     // in different sections
     return (
-      <TouchableOpacity style={styles.row} onPress={() => Clipboard.setString(rowData.art)}>
-        <Text style={styles.boldLabel}>{rowData.name}</Text>
-        <Text style={styles.label}>{rowData.art}</Text>
-      </TouchableOpacity>
+      <FacesCell
+        name={rowData.name}
+        art={rowData.art}
+        favorited={Math.random() >= 0.5}
+        onFavorite={() => window.alert('ACCEPTED!')}
+      />
     )
   }
 
