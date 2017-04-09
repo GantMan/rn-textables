@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, ListView, Text, TouchableOpacity, Clipboard, TextInput } from 'react-native'
 import { connect } from 'react-redux'
+import API from '../Services/Api'
 
 // For empty lists
 // import AlertMessage from '../Components/AlertMessage'
@@ -18,7 +19,7 @@ class ListviewSectionsExample extends React.Component {
     * This is an array of objects with the properties you desire
     * Usually this should come from Redux mapStateToProps
     *************************************************************/
-    const dataObjects = require('../Fixtures/faces.json')
+    const dataObjects = []
     /* ***********************************************************
     * STEP 2
     * Teach datasource how to detect if rows are different
@@ -30,12 +31,13 @@ class ListviewSectionsExample extends React.Component {
     const sectionHeaderHasChanged = (s1, s2) => s1 !== s2
 
     // DataSource configured
-    const ds = new ListView.DataSource({rowHasChanged, sectionHeaderHasChanged})
+    this.ds = new ListView.DataSource({rowHasChanged, sectionHeaderHasChanged})
 
     // Datasource is always in state
     this.state = {
-      dataSource: ds.cloneWithRowsAndSections(dataObjects)
+      dataSource: this.ds.cloneWithRowsAndSections(dataObjects)
     }
+    this.getData()
   }
 
   /* ***********************************************************
@@ -74,6 +76,14 @@ class ListviewSectionsExample extends React.Component {
       }
     }
   *************************************************************/
+
+  getData = async () => {
+    const api = API.create()
+    const faces = await api.getFaces()
+    this.setState({
+      dataSource: this.ds.cloneWithRowsAndSections(faces.data)
+    })
+  }
 
   // Used for friendly AlertMessage
   // returns true if the dataSource is empty
