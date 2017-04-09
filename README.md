@@ -1,10 +1,10 @@
 #  Textables
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-Build App Structure:
-https://www.youtube.com/watch?v=lv00UOXxy0g
+Re-creation of Textables in a JS Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+## Watch the videos and see the app get built step by step:
+https://github.com/GantMan/rn-textables/releases
 
 ## :arrow_up: How to Setup
 
